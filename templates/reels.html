@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Reels</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: black; color: white; font-family: sans-serif; display: flex; justify-content: center; }
+        .reels-container { width: 100%; max-width: 450px; height: 100vh; overflow-y: scroll; scroll-snap-type: y mandatory; }
+        .reels-container::-webkit-scrollbar { display: none; }
+        .reel { width: 100%; height: 100vh; scroll-snap-align: start; position: relative; background: #000; }
+        video { width: 100%; height: 100%; object-fit: cover; }
+        .logout-btn { position: absolute; top: 20px; right: 20px; background: red; color: white; padding: 5px 10px; border: none; border-radius: 5px; z-index: 10; text-decoration: none; font-size: 12px;}
+    </style>
+</head>
+<body>
+    <div class="reels-container">
+        <a href="/logout" class="logout-btn">Logout 🔓</a>
+        <div class="reel">
+            <video src="https://assets.mixkit.co/videos/preview/mixkit-girl-in-neon-sign-lighting-39807-large.mp4" loop autoplay muted onclick="this.paused ? this.play() : this.pause()"></video>
+        </div>
+        <div class="reel">
+            <video src="https://assets.mixkit.co/videos/preview/mixkit-taking-photos-with-a-smartphone-34352-large.mp4" loop onclick="this.paused ? this.play() : this.pause()"></video>
+        </div>
+    </div>
+</body>
+</html>
